@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101510"><meta name="description" content="FF Battle Arena Free Fire tournament manager">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<title>FF Battle Arena</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="brand"><span class="mark">⚔</span><div><b>FF BATTLE ARENA</b><small>TOURNAMENT HUB</small></div></div><button id="installBtn" class="outline hidden">Install App</button></header>
+<nav id="tabs"><button class="tab active" data-tab="home">Home</button><button class="tab" data-tab="matches">Matches</button><button class="tab" data-tab="leaderboard">Leaderboard</button><button class="tab" data-tab="profile">Profile</button><button class="tab" data-tab="admin">Admin</button></nav>
+<main>
+<section id="home" class="page active">
+<div class="hero"><span class="eyebrow">READY. DROP. DOMINATE.</span><h1>अपना अगला<br><em>BOOYAH!</em></h1><p>Free Fire tournaments में हिस्सा लो और अपनी टीम को टॉप पर ले जाओ।</p><button class="primary" data-go="matches">Tournament देखें <span>→</span></button></div>
+<div class="stats"><div><b id="totalMatches">0</b><small>TOURNAMENTS</small></div><div><b id="openSlots">0</b><small>OPEN SLOTS</small></div><div><b id="playersCount">0</b><small>PLAYERS</small></div></div>
+<div class="section-head"><h2>Featured Matches</h2><button class="textbtn" data-go="matches">सभी देखें</button></div><div id="featured" class="cards"></div>
+</section>
+<section id="matches" class="page"><div class="section-head"><div><span class="eyebrow">COMPETE</span><h2>All Tournaments</h2></div></div><div class="filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Solo">Solo</button><button class="filter" data-filter="Duo">Duo</button><button class="filter" data-filter="Squad">Squad</button><button class="filter" data-filter="1v1">1v1</button></div><div id="matchList" class="cards"></div></section>
+<section id="leaderboard" class="page"><span class="eyebrow">TOP FRAGGERS</span><h2>Leaderboard</h2><div id="leaderList"></div></section>
+<section id="profile" class="page"><span class="eyebrow">PLAYER ZONE</span><h2>My Profile</h2><div class="panel"><label>Player / In-game Name<input id="playerName" placeholder="अपना नाम लिखें"></label><label>Free Fire UID<input id="playerUid" inputmode="numeric" placeholder="अपनी UID लिखें"></label><button id="saveProfile" class="primary full">Profile Save करें</button><p id="profileMsg" class="muted"></p></div><h3>मेरी Registrations</h3><div id="myRegs"></div></section>
+<section id="admin" class="page"><span class="eyebrow">CONTROL ROOM</span><h2>Admin Panel</h2><div id="adminLogin" class="panel"><p class="muted">Demo admin access. पहली बार इस्तेमाल पर PIN बदलें।</p><label>Admin PIN<input id="adminPin" type="password" inputmode="numeric" placeholder="Demo PIN: 2468"></label><button id="adminEnter" class="primary full">Unlock Admin</button><p id="adminMsg" class="muted"></p></div>
+<div id="adminArea" class="hidden"><div class="panel"><h3>Create Tournament</h3><label>Tournament Name<input id="tName" placeholder="उदाहरण: Friday Night Clash"></label><div class="two"><label>Mode<select id="tMode"><option>Solo</option><option>Duo</option><option>Squad</option><option>1v1</option></select></label><label>Slots<input id="tSlots" type="number" min="2" value="48"></label></div><div class="two"><label>Date<input id="tDate" type="date"></label><label>Time<input id="tTime" type="time"></label></div><label>Entry details<input id="tEntry" placeholder="Free entry / details"></label><button id="createMatch" class="primary full">+ Create Tournament</button></div>
+<div class="panel"><h3>Manage Results</h3><label>Select tournament<select id="resultMatch"></select></label><label>Winner / Player name<input id="winnerName" placeholder="Winner name"></label><label>Kills<input id="winnerKills" type="number" min="0" value="0"></label><button id="saveResult" class="primary full">Save Result</button></div>
+<div class="panel"><h3>Registrations</h3><div id="adminRegs"></div></div><button id="adminLogout" class="outline full">Lock Admin</button></div></section>
+</main>
+<div id="toast" role="status"></div>
+<footer>FF BATTLE ARENA <span>Community tournament manager • Unofficial fan project</span></footer>
+<script src="app.js"></script>
+</body></html>

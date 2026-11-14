@@ -1,0 +1,6 @@
+{
+  "appId": "com.ffbattlearena.app",
+  "appName": "FF Battle Arena",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
